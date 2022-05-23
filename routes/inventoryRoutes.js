@@ -17,7 +17,7 @@ router.get("/:inventoryId", async function (req, res) {
       req.params.inventoryId
     );
     if (!dbResponse) {
-      res.status(404).send("No such inventory");
+      res.status(404).send("No any inventory");
     } else {
       res.status(200).send(dbResponse);
     }
@@ -46,9 +46,9 @@ router.put("/:inventoryId", async function (req, res) {
       req.body
     );
     if (!dbResponse) {
-      res.status(404).send("No such inventory");
+      res.status(404).send("No any inventory");
     } else {
-      res.status(200).send("Successfully updated inventory: " + dbResponse._id);
+      res.status(200).send("Updated inventory: " + dbResponse._id);
     }
   } catch (err) {
     response.status(400).send(err);
@@ -61,9 +61,9 @@ router.delete("/:inventoryId", async function (req, res) {
       req.params.inventoryId
     );
     if (!dbResponse) {
-      res.status(404).send("No such inventory");
+      res.status(404).send("No any inventory");
     } else {
-      res.status(200).send("Successfully deleted inventory: " + dbResponse._id);
+      res.status(200).send("Deleted inventory: " + dbResponse._id);
     }
   } catch (err) {
     response.status(400).send(err);
